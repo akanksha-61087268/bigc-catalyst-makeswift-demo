@@ -8,6 +8,15 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: process.env.BIGCOMMERCE_CDN_HOSTNAME ?? '*.bigcommerce.com',
+        protocol: 'https',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/**',
       },
     ],
   },
@@ -24,6 +33,8 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@icons-pack/react-simple-icons'],
   },
+
+  
 };
 
 module.exports = withMakeswift(nextConfig);
